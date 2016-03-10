@@ -53,23 +53,25 @@ public class ShellSortTest {
 			// 第一个循环 用来移动开始元素
 			for (int i = 0; i < code; i++) {
 				// 内部嵌套循环 是直接插入排序 注意是第一个元素 和 下标相隔增量的元素 之间的比较
+				// j 是与第一个元素相隔增量距离的元素
+				// j += code 是每次直接插入排序后 将整个需要直接插入排序的对象往后移code个距离
 				for (int j = i + code; j < arr.length; j += code) {
 					// k 是第一个元素
 					int k = j - code;
 					// temp 是相隔增量距离的元素
 					temp = arr[j];
 					// 如果后小前大 则交换
+					// k -= code 是与之前已经排好的顺序 的元素相比较 这些元素相差 code 个距离
 					for (; k >= 0 && temp < arr[k]; k -= code) {
 						arr[k + code] = arr[k];
 					}
-					// 否则不交换
 					arr[k + code] = temp;
 				}
 			}
 
 			// 如果已经是最小增量 则推出循环
 			if (code == 1) {
-				sop("\n最小增量");
+				sop("\n已经是最小增量，退出循环");
 				break;
 			}
 			// 打印此次的排序结果
@@ -80,7 +82,6 @@ public class ShellSortTest {
 			// 计数器自增
 			count++;
 		}
-
 	}
 
 	public static void sop(Object obj) {
