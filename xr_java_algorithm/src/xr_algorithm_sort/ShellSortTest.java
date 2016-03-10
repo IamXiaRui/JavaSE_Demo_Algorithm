@@ -31,38 +31,53 @@ public class ShellSortTest {
 	// 排序方法
 	public static void ShellSort(int[] arr) {
 
+		// 定义一个计数器 计算需要几次排序
 		int count = 1;
 
+		// 获取排序数组的长度
 		double shellCode = arr.length;
 
+		// 交换元素
 		int temp = 0;
 
+		// 一直循环到 增量为最小增量的时候
 		while (true) {
+			// 获取增量
 			shellCode = Math.ceil(shellCode / 2);
 
 			sop("\n\n第" + count + "个增量 ： " + shellCode);
 
+			// 将增量强制转换类型
 			int code = (int) shellCode;
 
+			// 第一个循环 用来移动开始元素
 			for (int i = 0; i < code; i++) {
+				// 内部嵌套循环 是直接插入排序 注意是第一个元素 和 下标相隔增量的元素 之间的比较
 				for (int j = i + code; j < arr.length; j += code) {
+					// k 是第一个元素
 					int k = j - code;
+					// temp 是相隔增量距离的元素
 					temp = arr[j];
+					// 如果后小前大 则交换
 					for (; k >= 0 && temp < arr[k]; k -= code) {
 						arr[k + code] = arr[k];
 					}
+					// 否则不交换
 					arr[k + code] = temp;
 				}
 			}
 
+			// 如果已经是最小增量 则推出循环
 			if (code == 1) {
 				sop("\n最小增量");
 				break;
 			}
+			// 打印此次的排序结果
 			sop("\n第" + count + "次排序后： ");
 			for (int i = 0; i < arr.length; i++) {
 				sop(" " + arr[i]);
 			}
+			// 计数器自增
 			count++;
 		}
 
