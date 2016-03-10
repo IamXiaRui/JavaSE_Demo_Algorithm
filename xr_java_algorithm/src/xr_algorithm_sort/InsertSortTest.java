@@ -14,13 +14,23 @@ package xr_algorithm_sort;
 public class InsertSortTest {
 
 	public static void main(String[] args) {
-		int[] arr = { 49, 52, 10, 69, 100, 75, 32, 41, 65, 5, 82, 28, 13, 57, 16 };
+		int[] a = { 49, 52, 10, 69, 100, 75, 32, 41, 65, 5, 82, 28, 13, 57, 16 };
 
 		sop("排序前： ");
-		for (int i = 0; i < arr.length; i++) {
-			sop(" " + arr[i]);
+		for (int i = 0; i < a.length; i++) {
+			sop(" " + a[i]);
 		}
 
+		InsertSort(a);
+
+		sop("\n排序后： ");
+		for (int i = 0; i < a.length; i++) {
+			sop(" " + a[i]);
+		}
+	}
+
+	// 排序方法
+	public static void InsertSort(int[] arr) {
 		// 初始化一个标志元素
 		int temp = 0;
 
@@ -37,11 +47,6 @@ public class InsertSortTest {
 			}
 			// 如果不满足 后面元素比前面大 后面保持位置不动 再循环找后面的元素
 			arr[j + 1] = temp;
-		}
-
-		sop("\n排序后： ");
-		for (int i = 0; i < arr.length; i++) {
-			sop(" " + arr[i]);
 		}
 	}
 
