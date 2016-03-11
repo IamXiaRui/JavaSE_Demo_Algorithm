@@ -13,18 +13,18 @@ package xr_algorithm_sort;
 public class ShellSortTest {
 
 	public static void main(String[] args) {
-		int[] a = { 49, 52, 10, 69, 100, 75, 32, 41, 65, 5, 82, 28, 13, 57, 16 };
+		int[] arr = { 49, 52, 10, 69, 100, 75, 32, 41, 65, 5, 82, 28, 13, 57, 16 };
 
 		sop("≈≈–Ú«∞£∫ ");
-		for (int i = 0; i < a.length; i++) {
-			sop(" " + a[i]);
+		for (int i = 0; i < arr.length; i++) {
+			sop(" " + arr[i]);
 		}
 
-		ShellSort(a);
+		ShellSort(arr);
 
 		sop("\n\n≈≈–Ú∫Û£∫ ");
-		for (int i = 0; i < a.length; i++) {
-			sop(" " + a[i]);
+		for (int i = 0; i < arr.length; i++) {
+			sop(" " + arr[i]);
 		}
 	}
 
